@@ -8,11 +8,12 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProjectResearchController {
-        @RequestMapping(value="/project/search", consumes=MediaType.APPLICATION_JSON_VALUE)
+        @RequestMapping(value="/project/search", consumes=MediaType.APPLICATION_JSON_VALUE,method = RequestMethod.GET)
         public Project findByProject(@RequestBody UserDTO request) {
             //TODO-リポジトリクラスを分離
             ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);

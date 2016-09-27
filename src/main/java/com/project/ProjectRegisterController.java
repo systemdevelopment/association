@@ -13,7 +13,7 @@ import com.project.Project;
 
 @RestController
 public class ProjectRegisterController {
-    @RequestMapping(value="/project/register", consumes=MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="project/register", consumes=MediaType.APPLICATION_JSON_VALUE)
     public ResultCode registProject(@RequestBody Project request) {
         //TODO-リポジトリクラスを分離
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
